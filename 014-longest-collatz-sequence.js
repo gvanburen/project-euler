@@ -15,62 +15,64 @@ NOTE: Once the chain starts the terms are allowed to go above one million.*/
 // TEST CASE:
 var n = 13;
 var terms = 2; //to account for n and 1
-while(n > 1){
-  if(n % 2 === 0){
-    n = n / 2;
-  } else {
-    n = (3 * n) + 1;
-  }
-  terms++;
+while (n > 1) {
+    if (n % 2 === 0) {
+        n = n / 2;
+    } else {
+        n = (3 * n) + 1;
+    }
+    terms++;
 }
 
 // IMPLIMENTATION
 var max = 0;
-for(var i = 2; i < 1000000; i++){
-  var n = i;
-  var terms = 2;
-  while(n > 1){
-    if(n % 2 === 0){
-      n = n / 2;
-    } else {
-      n = (3 * n) + 1;
+for (var i = 2; i < 1000000; i++) {
+    var n = i;
+    var terms = 2;
+    while (n > 1) {
+        if (n % 2 === 0) {
+            n = n / 2;
+        } else {
+            n = (3 * n) + 1;
+        }
+        terms++;
     }
-    terms++;
-  }
-  if(terms > max){
-    max = terms;
-  }
+    if (terms > max) {
+        max = terms;
+    }
 }
 
 // IMPLIMENTATION TAKE 2
-function even(n){
-  return n/2;
+function even(n) {
+    return n / 2;
 }
-function odd(n){
-  return 3*n + 1;
+
+function odd(n) {
+    return 3 * n + 1;
 }
-function sequence(n){
-  var a = [n];
-  while(n != 1){
-    if(n % 2 === 0){
-      n = even(n);
-    } else {
-      n = odd(n);
+
+function sequence(n) {
+    var a = [n];
+    while (n != 1) {
+        if (n % 2 === 0) {
+            n = even(n);
+        } else {
+            n = odd(n);
+        }
+        a.push(n);
     }
-    a.push(n);
-  }
-  return a;
+    return a;
 }
 var max = 0;
 var a = [];
 var b = [];
 var l;
-for(var i = 1; i < 1000000; i++){
-  b = sequence(i);
-  l = b.length;
-  if(l > max){
-    max = l;
-    a = b;
-  }
+for (var i = 1; i < 1000000; i++) {
+    b = sequence(i);
+    l = b.length;
+    if (l > max) {
+        max = l;
+        a = b;
+    }
 }
 console.log(a[0]);

@@ -11,16 +11,16 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
 
 var result = 0;
 // 6 (digit number) * 9^5 (highest digit)
-for(var i = 2; i < 354294; i++){
-  var sum = 0;
-  var strNum = String(i).split('');
-  for(var j = 0; j < strNum.length; j++){
-    var tmp = Number(strNum[j]);
-    tmp = Math.pow(tmp, 5);
-    sum += tmp;
-  }
-  if(sum === i){
-    result += i;
-  }
+for (var i = 2; i < 354294; i++) {
+    var sum = 0;
+    var strNum = String(i).split('');
+    for (var j = 0; j < strNum.length; j++) {
+        var tmp = Number(strNum[j]);
+        tmp = Math.pow(tmp, 5);
+        sum += tmp;
+    }
+    if (sum === i) {
+        result += i;
+    }
 }
 console.log(result);

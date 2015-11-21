@@ -2,21 +2,21 @@
 
 What is the 10 001st prime number?*/
 
-function primeNum(n){
-  var arr = [2];
-  for(var i = 3; arr.length < n; i++){
-    if(isPrime(i)){
-      arr.push(i);
+function primeNum(n) {
+    var arr = [2];
+    for (var i = 3; arr.length < n; i++) {
+        if (isPrime(i)) {
+            arr.push(i);
+        }
     }
-  }
-  console.log(arr[n-1]);
+    console.log(arr[n - 1]);
 }
 
-function isPrime(n){
-  for (var i = 2; i < n; i++){
-    if(n % i === 0){
-      return false;
+function isPrime(n) {
+    for (var i = 2; i < n; i++) {
+        if (n % i === 0) {
+            return false;
+        }
     }
-  }
-  return true;
+    return true;
 }

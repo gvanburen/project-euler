@@ -6,35 +6,38 @@ As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest numb
 
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.*/
 
-var arr = [], sumArr = [], sum = 0, limit = 28123;
+var arr = [],
+    sumArr = [],
+    sum = 0,
+    limit = 28123;
 
-for(var i = 1; i <= limit; i++){
-  if(getFactors(i) > i){
-    arr.push(i);
-  }
-}
-for(var j = 0; j < arr.length; j++){
-  for(var k = j; k < arr.length; k++){
-    var temp = arr[j]+arr[k];
-    if(temp <= limit){
-      sumArr[temp] = true;
+for (var i = 1; i <= limit; i++) {
+    if (getFactors(i) > i) {
+        arr.push(i);
     }
-  }
 }
-for(var x = 1; x < limit; x++){
-  if(!sumArr[x]){
-    sum+=x;
-  }
+for (var j = 0; j < arr.length; j++) {
+    for (var k = j; k < arr.length; k++) {
+        var temp = arr[j] + arr[k];
+        if (temp <= limit) {
+            sumArr[temp] = true;
+        }
+    }
+}
+for (var x = 1; x < limit; x++) {
+    if (!sumArr[x]) {
+        sum += x;
+    }
 }
 console.log(sum);
 
-function getFactors(n){
-  var sum = 0;
-  var limit = n/2+1
-  for(var i = 1; i < limit; i++){
-    if(n % i === 0){
-      sum+=i;
+function getFactors(n) {
+    var sum = 0;
+    var limit = n / 2 + 1
+    for (var i = 1; i < limit; i++) {
+        if (n % i === 0) {
+            sum += i;
+        }
     }
-  }
-  return sum;
+    return sum;
 }

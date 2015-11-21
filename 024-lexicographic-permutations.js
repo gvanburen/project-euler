@@ -34,10 +34,10 @@ function nextPermutation(array) {
     return true;
 }
 var count = 1;
-while(count < 1000000){
-  if(nextPermutation(str)){
-    count++;
-  }
+while (count < 1000000) {
+    if (nextPermutation(str)) {
+        count++;
+    }
 }
 console.log(str.join(""));
 

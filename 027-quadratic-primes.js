@@ -14,29 +14,33 @@ where |n| is the modulus/absolute value of n
 e.g. |11| = 11 and |−4| = 4
 Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.*/
 
-function isPrimeNum(n){
-  if(n < 2){return false}
-    var prime = true;
-  for(var i = 2; i <= Math.sqrt(n); i++){
-    if(n % i === 0){
-      prime = false;
+function isPrimeNum(n) {
+    if (n < 2) {
+        return false
     }
-  }
-  return prime;
+    var prime = true;
+    for (var i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            prime = false;
+        }
+    }
+    return prime;
 }
 
-var A = 0, B = 0, max = 0;
-for(var a = -999; a < 1000; a++){
-  for(var b = -999; b < 1000; b++){
-    var n = 0;
-    while(isPrimeNum(Math.abs(n * n + a * n + b))){
-      n++;
+var A = 0,
+    B = 0,
+    max = 0;
+for (var a = -999; a < 1000; a++) {
+    for (var b = -999; b < 1000; b++) {
+        var n = 0;
+        while (isPrimeNum(Math.abs(n * n + a * n + b))) {
+            n++;
+        }
+        if (n > max) {
+            max = n;
+            A = a;
+            B = b;
+        }
     }
-    if(n > max){
-      max = n;
-      A = a;
-      B = b;
-    }
-  }
 }
-console.log(A*B);
+console.log(A * B);

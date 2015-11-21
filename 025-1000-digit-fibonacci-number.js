@@ -25,12 +25,12 @@ var b = new BigNumber("1");
 var c = new BigNumber("2");
 var count = 3;
 var max = new BigNumber("10").pow("999");
-while(max._d.length > c._d.length){
-  a = b;
-  b = c;
-  console.log(a, b, c);
-  c = a.add(b);
-  count++;
+while (max._d.length > c._d.length) {
+    a = b;
+    b = c;
+    console.log(a, b, c);
+    c = a.add(b);
+    count++;
 }
 console.log(count);
 

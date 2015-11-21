@@ -6,44 +6,47 @@ What is the sum of the digits of the number 2^1000?*/
 var arr = [1];
 var carryOver = 0;
 var count = 0;
-while(count < 15){
-  for(var i = 0; i < count+1; i++){
-    var digit = arr[i] || 0;
-    digit = digit * 2 + carryOver;
-    if(digit > 9){
-      digit -= 10;
-      carryOver = 1;
-    } else {
-      carryOver = 0;
+while (count < 15) {
+    for (var i = 0; i < count + 1; i++) {
+        var digit = arr[i] || 0;
+        digit = digit * 2 + carryOver;
+        if (digit > 9) {
+            digit -= 10;
+            carryOver = 1;
+        } else {
+            carryOver = 0;
+        }
+        arr[i] = digit;
     }
-    arr[i] = digit;
-  }
-  count++;
+    count++;
 }
 var sum = 0;
-for(idx in arr){
-  sum+=arr[idx];
+for (idx in arr) {
+    sum += arr[idx];
 }
 
 // IMPLIMENTATION
-function exp(b,e){
-  var carryOver = 0, count = 0, sum = 0, arr = [1];
-  while(count < e){
-    for(var i = 0; i < count+1; i++){
-      var digit = arr[i] || 0;
-      digit = digit * b + carryOver;
-      if(digit > 9){
-        digit -= 10;
-        carryOver = 1;
-      } else {
-        carryOver = 0;
-      }
-      arr[i] = digit;
+function exp(b, e) {
+    var carryOver = 0,
+        count = 0,
+        sum = 0,
+        arr = [1];
+    while (count < e) {
+        for (var i = 0; i < count + 1; i++) {
+            var digit = arr[i] || 0;
+            digit = digit * b + carryOver;
+            if (digit > 9) {
+                digit -= 10;
+                carryOver = 1;
+            } else {
+                carryOver = 0;
+            }
+            arr[i] = digit;
+        }
+        count++;
     }
-    count++;
-  }
-  for(idx in arr){
-    sum+=arr[idx];
-  }
-  return sum;
+    for (idx in arr) {
+        sum += arr[idx];
+    }
+    return sum;
 }

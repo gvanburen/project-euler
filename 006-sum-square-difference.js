@@ -8,13 +8,15 @@ Hence the difference between the sum of the squares of the first ten natural num
 
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.*/
 
-function sumofSquares(n){
-  var square = 0, sumSquare = 0, diff;
-  for(var i = 0; i <= n; i++){
-    square += (i*i);
-    sumSquare += i;
-  }
-  sumSquare *= sumSquare;
-  diff = sumSquare - square;
-  console.log(diff);
+function sumofSquares(n) {
+    var square = 0,
+        sumSquare = 0,
+        diff;
+    for (var i = 0; i <= n; i++) {
+        square += (i * i);
+        sumSquare += i;
+    }
+    sumSquare *= sumSquare;
+    diff = sumSquare - square;
+    console.log(diff);
 }

@@ -18,18 +18,18 @@ What is the value of the first triangle number to have over five hundred divisor
 // not optimized and takes awhile to run
 var number = 0;
 var i = 1;
-while(number === 0){
-  var count = 0;
-  var triNum = (i*(i+1))/2;
-  for(var j = 1; j < Math.sqrt(triNum); j++){
-    if(triNum % j === 0){
-      count+=2;
+while (number === 0) {
+    var count = 0;
+    var triNum = (i * (i + 1)) / 2;
+    for (var j = 1; j < Math.sqrt(triNum); j++) {
+        if (triNum % j === 0) {
+            count += 2;
+        }
     }
-  }
-  if(count > 500){
-    number = triNum;
-    break;
-  }
-  i++;
+    if (count > 500) {
+        number = triNum;
+        break;
+    }
+    i++;
 }
 console.log(number);

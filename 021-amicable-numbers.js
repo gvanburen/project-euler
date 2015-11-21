@@ -5,23 +5,23 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 a
 
 Evaluate the sum of all the amicable numbers under 10000.*/
 
-function d(n){
-  var sum = 0;
-  var limit = n/2+1
-  for(var i = 1; i < limit; i++){
-    if(n % i === 0){
-      sum+=i;
+function d(n) {
+    var sum = 0;
+    var limit = n / 2 + 1
+    for (var i = 1; i < limit; i++) {
+        if (n % i === 0) {
+            sum += i;
+        }
     }
-  }
-  return sum;
+    return sum;
 }
 
 var total = 0;
-for(var i = 0; i < 10000; i++){
-  var x = d(i);
-  var y = d(x);
-  if(i === y && i !== x){
-    total+=i;
-  }
+for (var i = 0; i < 10000; i++) {
+    var x = d(i);
+    var y = d(x);
+    if (i === y && i !== x) {
+        total += i;
+    }
 }
 console.log(total);

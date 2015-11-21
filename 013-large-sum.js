@@ -106,12 +106,12 @@ var data = "37107287533902102798797998220837590246510135740250463769376774900097
 //var num = data.split("");
 var arr = [];
 var n = 50;
-for(var i = 0; i < data.length; i+=n){
-  arr.push(Number(data.slice(i, i+n)));
+for (var i = 0; i < data.length; i += n) {
+    arr.push(Number(data.slice(i, i + n)));
 }
 var sum = 0;
-for(idx in arr){
-  sum+=arr[idx];
+for (idx in arr) {
+    sum += arr[idx];
 }
 var sumStr = String(sum);
-console.log(sumStr.slice(0,11));
+console.log(sumStr.slice(0, 11));

@@ -23,8 +23,8 @@ What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed 
 //sum: 4 * (2n + 1)^2 - 12n
 
 var sum = 1;
-var limit = (1001-1)/2
-for(var i = 1; i < limit+1; i++){
-  sum+= 4 * Math.pow(2 * i + 1, 2) - 12 * i;
+var limit = (1001 - 1) / 2
+for (var i = 1; i < limit + 1; i++) {
+    sum += 4 * Math.pow(2 * i + 1, 2) - 12 * i;
 }
 console.log(sum);

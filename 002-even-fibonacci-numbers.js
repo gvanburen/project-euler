@@ -2,32 +2,31 @@
 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.*/
 
-function evenFibonacci(n){
-  // requires a term parameter
-  var sum = 0;
-  var fibo = [0,1];
-  for(var i = 2; i <= n; i++){
-    // array is going to become very large
-    fibo.push(fibo[i-1] + fibo[i-2]);
-    if(fibo[i] < 4000000 && fibo[i] % 2 === 0){
-      sum = sum + fibo[i];
+function evenFibonacci(n) {
+    // requires a term parameter
+    var sum = 0;
+    var fibo = [0, 1];
+    for (var i = 2; i <= n; i++) {
+        // array is going to become very large
+        fibo.push(fibo[i - 1] + fibo[i - 2]);
+        if (fibo[i] < 4000000 && fibo[i] % 2 === 0) {
+            sum = sum + fibo[i];
+        }
     }
-  }
-  return sum;
+    return sum;
 }
 
-function evenFibonacci2(){
-  var sum = 0;
-  var fibo = [0,1];
+function evenFibonacci2() {
+    var sum = 0;
+    var fibo = [0, 1];
 
-  while(true){
-    var next = fibo[0] + fibo[1];
-    if(next >= 4000000) break
-    if(next % 2 === 0){
-      sum = sum + next;
+    while (next < 4000000) {
+        var next = fibo[0] + fibo[1];
+        if (next % 2 === 0) {
+            sum = sum + next;
+        }
+        fibo[0] = fibo[1];
+        fibo[1] = next;
     }
-    fibo[0] = fibo[1];
-    fibo[1] = next;
-  }
-  return sum;
+    return sum;
 }

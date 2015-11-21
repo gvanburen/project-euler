@@ -13,11 +13,12 @@ How many such routes are there through a 20×20 grid?*/
   console.log(paths);
 }*/
 
-function factorial(n){
-  return n === 1 ? 1 : factorial(n-1)*n;
+function factorial(n) {
+    return n === 1 ? 1 : factorial(n - 1) * n;
 }
-function binom(n){
-	return Math.floor(factorial(2*n) / (Math.pow(factorial(n),2)));
+
+function binom(n) {
+    return Math.floor(factorial(2 * n) / (Math.pow(factorial(n), 2)));
 }
 
 binom(20);
