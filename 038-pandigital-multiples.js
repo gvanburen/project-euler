@@ -29,7 +29,7 @@ function isPandigital(a) {
 }
 
 var max = 0;
-for (var n = 1; n < 1000000; n++) {
+for (var n = 1; n < 10000; n++) {
     var str = "";
     for (var j = 1; j < 9; j++) {
         var d = n * j;
