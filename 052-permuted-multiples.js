@@ -13,7 +13,7 @@ function isPermutation(a, b){
     return true;
 }
 var notFound = true;
-var i = 1;
+var i = 125874;
 while(notFound){
 	if(isPermutation(i, i*2) &&
 		isPermutation(i, i*3) &&
